@@ -57,7 +57,7 @@ export class SpriteImporter {
         const parts = line.split(/,/);
         const highByte = parseInt(parts[0].trim(), 2);
         const lowByte = parseInt(parts[1].trim(), 2);
-        return (highByte & 0xf) << 8 | (lowByte & 0xf);
+        return (highByte & 0xff) << 8 | (lowByte & 0xff);
     }
 
 }
