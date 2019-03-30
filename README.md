@@ -1,5 +1,7 @@
 # Pixel
 
+A very simple sprite editor for spectrum games. Used in the re-write for Fireman FRED
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
 ## Development server

@@ -1,0 +1,22 @@
+<div  fxLayout="row" fxLayoutAlign="space-around center">
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="16" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="15" (valueChanged) = "pixelValueChanged($event)"> </app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="14" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="13" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="12" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="11" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="10" (valueChanged) = "pixelValueChanged($event)"> </app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="9" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="8" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="7" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="6" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="5" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="4" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="3" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="2" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<app-sprite-editor-pixel [wordValue]= "wordValue" [bit]="1" (valueChanged) = "pixelValueChanged($event)"></app-sprite-editor-pixel>
+<div style="display:inline">
+{{wordValue.toString(2).padStart(16, "0")}}
+</div>
+</div>
+<br/>
