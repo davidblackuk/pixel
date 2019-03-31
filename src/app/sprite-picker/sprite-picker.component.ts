@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { ImportDialogComponent } from '../import-dialog/import-dialog.component';
+import { SpriteImporter } from '../sprite-importer';
+import { SpriteStoreService } from '../sprite-store.service';
+import { Sprite } from '../sprite';
 
 @Component({
   selector: 'app-sprite-picker',
@@ -7,24 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpritePickerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private spriteStoreService: SpriteStoreService) { 
+    spriteStoreService.data.subscribe((data) => {
+        this.sprites = data;
+    });
+  }
 
-  private showImport = false;
+  private sprites: Sprite[];
+
+  private importData = '';
 
   ngOnInit() {
   }
 
   public import() {
-    this.showImport = true;
+    const dialogRef = this.dialog.open(ImportDialogComponent, {
+      width: '250px',
+      height: '400px',
+      data: {name: this.importData, animal: this.importData}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      const importer = new SpriteImporter();
+      const sprites = importer.import(result);
+      this.spriteStoreService.add(sprites);
+    });
   }
 
   public export() {
 
   }
 
-  public get showImportControl() {
-    return this.showImport;
-  }
-
+ 
 
 }

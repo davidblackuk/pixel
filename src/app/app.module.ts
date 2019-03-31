@@ -6,7 +6,10 @@ import { SpritePickerComponent } from './sprite-picker/sprite-picker.component';
 import { SpriteEditorComponent } from './sprite-editor/sprite-editor.component';
 import { SpriteEditorRowComponent } from './sprite-editor-row/sprite-editor-row.component';
 import { SpriteEditorPixelComponent } from './sprite-editor-pixel/sprite-editor-pixel.component';
-import { SpritePickerImportComponent } from './sprite-picker-import/sprite-picker-import.component';
+import { ImportDialogComponent } from './import-dialog/import-dialog.component';
+import { MatDialogModule, MatButtonModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { SpritePickerSpriteComponent } from './sprite-picker-sprite/sprite-picker-sprite.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,21 @@ import { SpritePickerImportComponent } from './sprite-picker-import/sprite-picke
     SpriteEditorComponent,
     SpriteEditorRowComponent,
     SpriteEditorPixelComponent,
-    SpritePickerImportComponent
+    ImportDialogComponent,
+    SpritePickerSpriteComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ImportDialogComponent ]
 })
 export class AppModule { }

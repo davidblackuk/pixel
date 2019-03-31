@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpritePickerImportComponent } from './sprite-picker-import.component';
+import { ImportDialogComponent } from './import-dialog.component';
 
-describe('SpritePickerImportComponent', () => {
-  let component: SpritePickerImportComponent;
-  let fixture: ComponentFixture<SpritePickerImportComponent>;
+describe('ImportDialogComponent', () => {
+  let component: ImportDialogComponent;
+  let fixture: ComponentFixture<ImportDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpritePickerImportComponent ]
+      declarations: [ ImportDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpritePickerImportComponent);
+    fixture = TestBed.createComponent(ImportDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
