@@ -21,7 +21,7 @@ export class SpriteEditorRowComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
-    console.log(`row changed ${this.row} = ${this.words[this.row]}`);
+   
   }
 
 

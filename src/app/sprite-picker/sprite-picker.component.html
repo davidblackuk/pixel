@@ -1,6 +1,6 @@
 <div class="header">
-  <button mat-button (click)="import()">Import</button>
-  <button mat-button (click)="export()">Export</button>
+  <button mat-button mat-stroked-button (click)="import()">Import</button>
+  <button mat-button mat-stroked-button (click)="export()">Export</button>
 
   <app-sprite-picker-sprite *ngFor="let element of sprites" [sprite]="element"></app-sprite-picker-sprite>
   

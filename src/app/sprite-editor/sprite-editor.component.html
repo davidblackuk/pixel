@@ -1,3 +1,12 @@
+<div class="toolbar">
+    <button mat-button mat-stroked-button (click)="clear()">Clear</button>
+    <button mat-button mat-stroked-button (click)="left()"> < </button>
+    <button mat-button mat-stroked-button (click)="up()"> ^ </button>
+    <button mat-button mat-stroked-button (click)="down()"> v </button>
+    <button mat-button mat-stroked-button (click)="right()"> > </button>
+    <button mat-button mat-stroked-button (click)="save()"> Save </button>
+
+</div>
 <div>
 <app-sprite-editor-row [words]="words" [row]="0" (valueChanged)="onValueChanged($event)"   ></app-sprite-editor-row>
 <app-sprite-editor-row [words]="words" [row]="1" (valueChanged)="onValueChanged($event)" ></app-sprite-editor-row>

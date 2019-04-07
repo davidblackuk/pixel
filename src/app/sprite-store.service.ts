@@ -27,4 +27,12 @@ export class SpriteStoreService {
   public selected(sprite: Sprite) {
     this._spriteDataSource.next(sprite);
   }
+
+  public update(id: number, data: number []) {
+    const sprites = this.state.filter(x => x.id == id);
+    if (sprites && sprites.length === 1) {
+      sprites[0].words = data;
+    }
+  }
+
 }

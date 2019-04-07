@@ -1,10 +1,11 @@
 import { Sprite } from './sprite';
 
 export class SpriteImporter {
+    private static lastId = 1;
+
     sprites: Sprite [] = [];
     private nextLabel = '';
     private spriteTextValues: string [] = [];
-
     public import(text: string): Sprite [] {
         const lines = text.split(/\n/);
 
@@ -34,7 +35,8 @@ export class SpriteImporter {
      * Takes the optional label and the 16 string rows and parses them into sprites
      */
     private addProcessedSprite() {
-        const res = new Sprite();
+        const res = this.createSprite();
+
         res.label = this.nextLabel;
         res.words = [];
         for (let i = 0; i < 16; i++) {
@@ -60,4 +62,10 @@ export class SpriteImporter {
         return (highByte & 0xff) << 8 | (lowByte & 0xff);
     }
 
+    private createSprite() {
+        const res = new Sprite();
+        res.id = SpriteImporter.lastId;
+        SpriteImporter.lastId = SpriteImporter.lastId + 1;
+        return res;
+    }
 }
