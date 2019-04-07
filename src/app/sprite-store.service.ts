@@ -10,9 +10,11 @@ export class SpriteStoreService {
 
   private state: Sprite [] = [];
   private _spritesDataSource: BehaviorSubject<Sprite[]> = new BehaviorSubject([]);
+  private _spriteDataSource: BehaviorSubject<Sprite> = new BehaviorSubject(null);
 
 
   public readonly data: Observable<Sprite[]> = this._spritesDataSource.asObservable();
+  public readonly currentSelection: Observable<Sprite> = this._spriteDataSource.asObservable();
 
 
   constructor() { }
@@ -20,5 +22,9 @@ export class SpriteStoreService {
   public add(sprites: Sprite[]) {
     this.state = sprites;
     this._spritesDataSource.next(this.state);
+  }
+
+  public selected(sprite: Sprite) {
+    this._spriteDataSource.next(sprite);
   }
 }

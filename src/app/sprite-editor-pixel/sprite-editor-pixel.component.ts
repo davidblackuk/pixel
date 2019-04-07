@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { BindingType } from '@angular/compiler';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-sprite-editor-pixel',
@@ -12,25 +13,37 @@ export class SpriteEditorPixelComponent implements OnInit {
 
   @Input() wordValue: number;
   @Input() bit: number;
-  @Output() valueChanged: EventEmitter<PixelValue> = new EventEmitter();
+  @Output() valueChanged: EventEmitter<number> = new EventEmitter();
 
-  private pixelOn: boolean;
 
   ngOnInit() {
-    const val = 1 << this.bit;
-    this.pixelOn = (this.wordValue & val) != 0;
+
   }
 
   public get isSet() {
-    return this.pixelOn;
+    const val = 1 << (this.bit - 1);
+    return (this.wordValue & val) !== 0;
   }
 
   public onClick() {
-    this.pixelOn = !this.pixelOn;
-    this.valueChanged.emit({
-      bit: this.bit,
-      value: this.pixelOn
-    });
+    const val = 1 << (this.bit - 1);
+
+    console.log(`Pixel ${this.bit} val is ${val.toString(2).padStart(16, '0')}`)
+
+    if ((this.wordValue & val) !== 0) {
+      let mask = 0xffff;
+      mask = mask ^ val;
+
+      console.log(`Pixel ${this.bit} msk is ${mask.toString(2).padStart(16, '0')}`)
+
+      this.wordValue = this.wordValue & mask;
+    } else {
+      this.wordValue = this.wordValue | val;
+    }
+
+    console.log(`Pixel ${this.bit} wrd is ${this.wordValue.toString(2).padStart(16, '0')}`)
+
+    this.valueChanged.emit(this.wordValue);
   }
 
 }

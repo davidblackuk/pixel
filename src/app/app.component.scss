@@ -1,9 +1,20 @@
 
 
+$picker-width: 200px;
 
 .leftPanel {
-
+    position: absolute;
+    width: $picker-width;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
 }
 
 .rightPanel {
+    position: absolute;
+    left: $picker-width;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }

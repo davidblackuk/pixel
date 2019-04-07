@@ -1,4 +1,29 @@
+
+.title {
+    background-color: #333;
+    color: white;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    user-select: none;
+}
+
 .previewRow {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.1rem
+    font-size: 0.1rem;
+    user-select: none;
+}
+
+.preview {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    user-select: none;
+    
+}
+
+.outer:hover {
+    background-color: #eee;
+    cursor: pointer;
 }

@@ -16,7 +16,7 @@ export class SpriteImporter {
 
     private parse(line: string): Sprite [] {
         line = line.toLocaleLowerCase();
-        if (line.trim().length == 0) {
+        if (line.trim().length === 0) {
             return;
         }
         if (line.indexOf('.byte') === -1) {
@@ -37,7 +37,7 @@ export class SpriteImporter {
         const res = new Sprite();
         res.label = this.nextLabel;
         res.words = [];
-        for (let i=0; i<15; i++) {
+        for (let i = 0; i < 16; i++) {
             res.words.push(this.processByteRow(this.spriteTextValues[i]));
         }
         this.sprites.push(res);

@@ -1,4 +1,6 @@
 import { Component, Output, OnInit, Input, EventEmitter } from '@angular/core';
+import { SpriteStoreService } from '../sprite-store.service';
+import { Sprite } from '../sprite';
 
 @Component({
   selector: 'app-sprite-editor',
@@ -7,9 +9,11 @@ import { Component, Output, OnInit, Input, EventEmitter } from '@angular/core';
 })
 export class SpriteEditorComponent implements OnInit {
 
+  private currentSprite: Sprite;
+
   @Output() valueChanged: EventEmitter<number[]> = new EventEmitter();
 
-  @Input() words: number [] = [
+   words: number [] = [
     0b0000011000000000,
     0b0000011111000000,
     0b0000001111100000,
@@ -28,7 +32,14 @@ export class SpriteEditorComponent implements OnInit {
     0b0000111011100000,
   ];
 
-  constructor() { }
+  constructor(private spriteStoreService: SpriteStoreService ) { 
+    spriteStoreService.currentSelection.subscribe((sprite) => {
+      if (sprite) {
+        this.currentSprite = sprite;
+        this.words = sprite.words;
+      }
+  });
+  }
 
   ngOnInit() {
   }

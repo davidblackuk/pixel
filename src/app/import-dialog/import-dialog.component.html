@@ -2,10 +2,14 @@
 <div mat-dialog-content>
   <p>Paste your sprite definitions</p>
   <mat-form-field>
-    <textarea  matInput [(ngModel)]="data.animal"></textarea>
+    <textarea #textArea matInput [(ngModel)]="data.text" >
+
+
+
+    </textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data.text" cdkFocusInitial>Ok</button>
 </div>

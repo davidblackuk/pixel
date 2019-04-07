@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Sprite } from '../sprite';
+import { SpriteStoreService } from '../sprite-store.service';
 
 @Component({
   selector: 'app-sprite-picker-sprite',
@@ -8,13 +9,17 @@ import { Sprite } from '../sprite';
 })
 export class SpritePickerSpriteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spriteStoreService: SpriteStoreService) { }
 
   @Input() sprite: Sprite;
   private previewLines: string [] = [];
 
   ngOnInit() {
     this.initializePreview();
+  }
+
+  public select() {
+    this.spriteStoreService.selected(this.sprite);
   }
 
   private initializePreview() {
@@ -29,6 +34,4 @@ export class SpritePickerSpriteComponent implements OnInit {
         });
     this.previewLines = res;
   }
-
-
 }

@@ -1,7 +1,7 @@
-<div>
-  <p>{{ sprite.label }}</p>
+<div class="outer" (click)="select()">
+  <div class="title">{{ sprite.label }}</div>
 
-  <div>
+  <div class="preview">
     <div class="previewRow"  *ngFor="let element of previewLines"> {{element}} </div>
   </div>
 
