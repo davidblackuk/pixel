@@ -30,4 +30,12 @@ export class SpriteManipulationService {
     return this.shifter.right(words);
   }
 
+  public flipVertical(words: number []) : number [] {
+    return this.shifter.flipVertical(words);
+  }
+
+  public flipHorizontal(words: number []) : number [] {
+    return this.shifter.flipHorizontal(words);
+  }
+
 }

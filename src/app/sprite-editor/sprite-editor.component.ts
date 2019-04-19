@@ -75,6 +75,14 @@ export class SpriteEditorComponent implements OnInit {
     this.words = this.manipulations.right(this.words);
   }
 
+  public flipHorizontal() {
+    this.words = this.manipulations.flipHorizontal(this.words);
+  }
+
+  public flipVertical() {
+    this.words = this.manipulations.flipVertical(this.words);
+  }
+
   public save() {
     this.spriteStoreService.update(this.currentSprite.id, this.words);
   }
