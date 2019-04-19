@@ -11,7 +11,7 @@ import { Sprite } from '../sprite';
   styleUrls: ['./export-dialog.component.scss']
 })
 export class ExportDialogComponent implements OnInit, OnDestroy {
- 
+
   private subscription: Subscription;
   private code = '';
 
@@ -59,7 +59,7 @@ export class ExportDialogComponent implements OnInit, OnDestroy {
   }
 
 
- 
+
 
 
 }

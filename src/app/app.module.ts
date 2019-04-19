@@ -7,7 +7,7 @@ import { SpriteEditorComponent } from './sprite-editor/sprite-editor.component';
 import { SpriteEditorRowComponent } from './sprite-editor-row/sprite-editor-row.component';
 import { SpriteEditorPixelComponent } from './sprite-editor-pixel/sprite-editor-pixel.component';
 import { ImportDialogComponent } from './import-dialog/import-dialog.component';
-import { MatDialogModule, MatButtonModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { SpritePickerSpriteComponent } from './sprite-picker-sprite/sprite-picker-sprite.component';
 import { ExportDialogComponent } from './export-dialog/export-dialog.component';
@@ -30,7 +30,8 @@ import { ExportDialogComponent } from './export-dialog/export-dialog.component';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
 
   ],
   providers: [],

@@ -40,9 +40,14 @@ export  class Sprite {
                 .toString(2)
                 .padStart(16, '0')
                 .replace(/0/g, '\u2B1C')
-                .replace(/1/g, '\u2B1B');
+                .replace(/1/g, '\u2B1B')
+                ;
             res.push(row);
             });
+
+        console.dir(res);
+
+
         return res;
     }
 }

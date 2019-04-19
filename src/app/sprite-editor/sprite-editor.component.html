@@ -1,10 +1,14 @@
 <div class="toolbar">
-    <button mat-button mat-stroked-button (click)="clear()">Clear</button>
-    <button mat-button mat-stroked-button (click)="left()"> < </button>
-    <button mat-button mat-stroked-button (click)="up()"> ^ </button>
-    <button mat-button mat-stroked-button (click)="down()"> v </button>
-    <button mat-button mat-stroked-button (click)="right()"> > </button>
-    <button mat-button mat-stroked-button (click)="save()"> Save </button>
+        
+    <button title="clear all pixels" mat-icon-button mat-stroked-button (click)="clear()"><mat-icon>clear</mat-icon> </button>
+
+    <button title="shift left" mat-icon-button mat-stroked-button (click)="left()"><mat-icon>arrow_left</mat-icon> </button>
+    <button title="shift up" mat-icon-button mat-stroked-button (click)="up()"><mat-icon>arrow_drop_up</mat-icon> </button>
+    <button title="shift down" mat-icon-button mat-stroked-button  (click)="down()"><mat-icon>arrow_drop_down</mat-icon></button>
+    <button title="shift right" mat-icon-button mat-stroked-button (click)="right()"><mat-icon>arrow_right</mat-icon></button>
+
+    <button title="save to original location" mat-icon-button mat-stroked-button (click)="save()"><mat-icon>save</mat-icon></button>
+
 
 </div>
 <div>

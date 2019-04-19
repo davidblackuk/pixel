@@ -24,7 +24,7 @@ export class SpriteImporter {
             this.nextLabel = line;
         } else {
             this.spriteTextValues.push(line);
-            if (this.spriteTextValues.length == 16) {
+            if (this.spriteTextValues.length === 16) {
                 this.addProcessedSprite();
             }
         }
